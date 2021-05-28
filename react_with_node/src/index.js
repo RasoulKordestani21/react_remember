@@ -5,12 +5,14 @@ import Home from './pages/Home';
 import ListPage from './pages/ListPage';
 import CounterPage from './pages/CounterPage';
 import UserPage from './pages/UserPage'
+import TodoHomePage from './pages/TodoHome/TodoHome.page';
 ReactDOM.render(
   <div>
     {/* <Home />
     <ListPage />
-    <CounterPage />   */}
-    <UserPage />
+    <CounterPage />  
+    <UserPage /> */}
+    <TodoHomePage />
   </div>
   ,
   document.getElementById('root')
