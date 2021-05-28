@@ -1,13 +1,18 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import Home from './pages/Home';
+import ListPage from './pages/ListPage';
+import CounterPage from './pages/CounterPage';
+import UserPage from './pages/UserPage'
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <div>
+    {/* <Home />
+    <ListPage />
+    <CounterPage />   */}
+    <UserPage />
+  </div>
+  ,
   document.getElementById('root')
 );
 
