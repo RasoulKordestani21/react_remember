@@ -6,6 +6,17 @@ class Form extends Component {
         title: "",
         description: ""
     }
+    counter = 0;
+    intervalFunc = setInterval(() => { console.log(this.counter++) }, 1000)
+    componentDidMount() {
+        console.log("mounted")
+    }
+    componentWillUnmount() {
+        console.log("component removed form page !!!");
+        clearInterval(this.intervalFunc);
+        this.setState({ title: 'salam' })
+        this.props.onUnmount();
+    }
     handleChangeTitleInput = (title) => {
         this.setState({ title })
     }

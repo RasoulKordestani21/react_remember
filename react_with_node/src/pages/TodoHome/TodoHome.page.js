@@ -2,21 +2,29 @@ import React, { Component } from 'react'
 import Form from './Components/Form/Form.component'
 export class TodoHomePage extends Component {
     state = {
-        flag: true
+        flag: true,
+        flag2: false,
     }
-    componentDidMount() {
-        console.log("form mounted");
+
+    shouldComponentUpdate(nextProp, nextState) {
+        console.log("should Update :", this.state.flag, nextState.flag);
+        // if (this.state.flag == nextState.flag) {
+        //     window.location.href = "http://google.com";
+        //     return false;
+        // }
+        return true
     }
-    componentWillUnmount() {
-        console.log("form unmounted")
+    componentDidUpdate(prevProp, prevState) {
+        console.log("did Update :", this.state.flag, prevState.flag);
     }
     render() {
         return (
             <div>
                 <header>header</header>
-                {this.state.flag && <Form />}
-                <button onClick={() => { this.setState({ flag: true }) }}>form adder</button>
-                <button onClick={() => { this.setState({ flag: false }) }}>form remover</button>
+                {this.state.flag && <Form onUnmount={() => { this.setState({ flag2: true }); console.log("!!!!") }} />}
+                {/* <button onClick={() => { this.setState({ flag: true }) }}>form adder</button> */}
+                <button type="button" onClick={() => this.setState({ flag: true })}>form adder</button>
+                <button type="button" onClick={() => this.setState({ flag: false })}>form remover</button>
             </div>
         )
     }

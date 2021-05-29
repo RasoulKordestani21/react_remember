@@ -12,9 +12,9 @@ class InputField extends Component {
         this.props.onChangeInput(this.state.value);
     }
 
-    componentDidMount() {
-        console.log("mounted")
-    }
+    // componentDidMount() {
+    //     console.log("mounted")
+    // }
     render() {
         console.log("didmou")
 
