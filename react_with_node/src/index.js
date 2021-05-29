@@ -1,4 +1,4 @@
-import React from 'react';
+import React , {Fragment} from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import Home from './pages/Home';
@@ -7,13 +7,18 @@ import CounterPage from './pages/CounterPage';
 import UserPage from './pages/UserPage'
 import TodoHomePage from './pages/TodoHome/TodoHome.page';
 ReactDOM.render(
-  <div>
-    {/* <Home />
-    <ListPage />
-    <CounterPage />  
-    <UserPage /> */}
+  // <div>
+  //   {/* <Home />
+  //   <ListPage />
+  //   <CounterPage />  
+  //   <UserPage /> */}
+  //   <TodoHomePage />
+  // </div>
+  <Fragment>
+    <h1>salam</h1>
     <TodoHomePage />
-  </div>
+  </Fragment>
+  // you can use <></> or <Fragment></Fragment>
   ,
   document.getElementById('root')
 );
