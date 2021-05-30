@@ -11,32 +11,36 @@ class Form extends Component {
     componentDidMount() {
         console.log("mounted")
     }
+
     componentWillUnmount() {
         console.log("component removed form page !!!");
         clearInterval(this.intervalFunc);
         this.setState({ title: 'salam' })
-        this.props.onUnmount();
+        // this.props.onUnmount();
     }
-    handleChangeTitleInput = (title) => {
-        this.setState({ title })
-    }
-    handleChangeDescriptionInput = (description) => {
-        this.setState({ description })
-    }
+    // handleChangeTitleInput = (title) => {
+    //     this.setState({ title })
+    // }
+    // handleChangeDescriptionInput = (description) => {
+    //     this.setState({ description })
+    // }
     handleChangeInput = (key, value) => {
-        this.setState({ key: value })
+        this.setState({ [key]: value })
+
     }
     handlClick = (param) => {
-        console.log(param);
+        this.props.onClick(this.state.title, this.state.description);
+        this.setState({ title: '', description: '' });
+        console.log(this.state)
     }
     render() {
-        console.log(Object.keys(this.state))
+        console.log(this.state.title);
         return (
             <div>
-                <form onSubmit={e => { e.preventDefault(); console.log('submited') }}>
-                    <InputField title="username : " onChangeInput={(inputData) => this.handleChangeInput(Object.keys(this.state)[0], inputData)} />
-                    <InputField title="password : " onChangeInput={(inputData) => this.handleChangeInput(Object.keys(this.state)[1], inputData)} />
-                    <Button type="submit" onClick={this.handlClick}><span>sumbit</span></Button>
+                <form onSubmit={e => { console.log('submited') }}>
+                    <InputField title="username : " value={this.state.title} onChangeInput={(inputData) => this.handleChangeInput(Object.keys(this.state)[0], inputData)} />
+                    <InputField title="password : " value={this.state.description} onChangeInput={(inputData) => this.handleChangeInput(Object.keys(this.state)[1], inputData)} />
+                    <Button onClick={this.handlClick}>sumbit</Button>
                 </form>
             </div>
         )

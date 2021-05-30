@@ -3,9 +3,18 @@ import Form from './Components/Form/Form.component'
 export class TodoHomePage extends Component {
     state = {
         flag: true,
-        flag2: false,
-    }
+        // data:{title:'',description:''},
 
+        users: []
+    }
+    submitHandler = (title, description) => {
+        // console.log(this.state)
+        // const users = [...this.state.users, { title, description }]
+        const users = this.state.users;
+        users.push({ title, description })
+        this.setState({ users })
+        console.log(this.state.users);
+    }
     shouldComponentUpdate(nextProp, nextState) {
         console.log("should Update :", this.state.flag, nextState.flag);
         // if (this.state.flag == nextState.flag) {
@@ -21,8 +30,13 @@ export class TodoHomePage extends Component {
         return (
             <div>
                 <header>header</header>
-                {this.state.flag && <Form onUnmount={() => { this.setState({ flag2: true }); console.log("!!!!") }} />}
+                {this.state.flag && <Form onClick={this.submitHandler} />}
                 {/* <button onClick={() => { this.setState({ flag: true }) }}>form adder</button> */}
+                <ul>
+                   
+                    {this.state.users.map(item => <li>{item.title} | {item.description}  </li>)}
+                  
+                </ul>
                 <button type="button" onClick={() => this.setState({ flag: true })}>form adder</button>
                 <button type="button" onClick={() => this.setState({ flag: false })}>form remover</button>
             </div>

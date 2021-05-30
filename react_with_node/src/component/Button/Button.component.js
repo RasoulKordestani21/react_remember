@@ -2,10 +2,11 @@ import React, { Component } from 'react'
 
 class Button extends Component {
     handleClick = (event) => {
-        
-        if (this.props.type === 'sumbit') {
-            this.props.onClick(event)
-        }
+        console.log('salam')
+        // if (this.props.type === 'sumbit') {
+        //     this.props.onClick(event)
+        // }
+        this.props.onClick(event);
         event.preventDefault();
     }
     render() {

@@ -1,8 +1,12 @@
 import React, { Component } from 'react'
 
 class InputField extends Component {
-    state = {
-        value: ""
+
+    constructor(props) {
+        super(props)
+        this.state = {
+            value: ''
+        }
     }
 
     changeHandler = async ({ target }) => {
@@ -12,19 +16,26 @@ class InputField extends Component {
         this.props.onChangeInput(this.state.value);
     }
 
-    // componentDidMount() {
-    //     console.log("mounted")
-    // }
+    componentDidMount() {
+        console.log("mounted");
+        this.setState({ value: this.props.value })
+        console.log(this.state.value)
+    }
+    shouldComponentUpdate(nextProp, nextState) {
+        if (this.props.value !== nextProp.value) this.setState({ value: nextProp.value });
+        return true;
+    }
     render() {
         console.log("didmou")
 
         /*destructure also applied to here*/
-        const { value } = this.state;
+        // const { value } = this.props.value;
+        console.log(this.state);
         const { title = "set a title please" } = this.props;
         return (
             <div>
                 <label>{title}</label>
-                <input type="text" value={value} onChange={this.changeHandler} />
+                <input type="text" value={this.state.value} onChange={this.changeHandler} />
             </div>
         )
     }
