@@ -16,9 +16,9 @@ ReactDOM.render(
   //   <TodoHomePage />
   // </div>
   <Fragment>
-    {/* <h1>salam</h1>
-    <TodoHomePage /> */}
-    <MouseTracker />
+    {/* <h1>salam</h1> */}
+    <TodoHomePage />
+    {/* <MouseTracker /> */}
   </Fragment>
   // you can use <></> or <Fragment></Fragment>
   ,

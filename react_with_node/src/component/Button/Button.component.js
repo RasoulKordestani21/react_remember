@@ -1,6 +1,14 @@
 import React, { Component } from 'react'
 
+const buttonStyles = {
+    color: "gray",
+    backgroundColor: "aqua",
+    padding: '5px',
+    borderRadius: '20%'
+}
 class Button extends Component {
+
+
     handleClick = (event) => {
         console.log('salam')
         // if (this.props.type === 'sumbit') {
@@ -13,7 +21,7 @@ class Button extends Component {
         const { type = "button" } = this.props;//destructure 
         return (
             <div>
-                <button type={type} onClick={this.handleClick}>{this.props.children}</button>
+                <button style={buttonStyles}  type={type} onClick={this.handleClick}>{this.props.children}</button>
             </div>
         )
     }
