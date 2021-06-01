@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import './InputField.component.css';
+import React, { Component } from 'react';
+import InputFieldStyle from './InputField.module.css';
 class InputField extends Component {
 
     constructor(props) {
@@ -33,7 +33,7 @@ class InputField extends Component {
         console.log(this.state);
         const { title = "set a title please" } = this.props;
         return (
-            <div className={`wrapper`}>
+            <div className={InputFieldStyle.wrapper} >
                 <label>{title}</label>
                 <input  type="text" value={this.state.value} onChange={this.changeHandler} />
             </div>

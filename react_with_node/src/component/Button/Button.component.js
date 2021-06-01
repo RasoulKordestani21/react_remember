@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-// import './Button.component.css'; 
+import ButtonStyle from './Button.module.css'; 
 
 class Button extends Component {
 
@@ -15,7 +15,7 @@ class Button extends Component {
     render() {
         const { type = "button" } = this.props;//destructure 
         return (
-            <div className={'wrapper'}>
+            <div className={ButtonStyle.wrapper}>
                 <button className={'button'} type={type} onClick={this.handleClick}>{this.props.children}</button>
             </div>
         )
