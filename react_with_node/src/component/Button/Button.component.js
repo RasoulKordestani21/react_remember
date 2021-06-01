@@ -14,7 +14,7 @@ class Button extends Component {
     render() {
         const { type = "button" } = this.props;//destructure 
         return (
-            <div className={ButtonStyle.wrapper_in}>
+            <div className={ButtonStyle.wrapper_in_temp}>
                 <button className={'button'} type={type} onClick={this.handleClick}>{this.props.children}</button>
             </div>
         )
