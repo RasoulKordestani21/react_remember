@@ -6,6 +6,7 @@ import ListPage from './pages/ListPage';
 import CounterPage from './pages/CounterPage';
 import UserPage from './pages/UserPage'
 import TodoHomePage from './pages/TodoHome/TodoHome.page';
+import { MouseTracker } from './component/terminal'
 ReactDOM.render(
   // <div>
   //   {/* <Home />
@@ -15,8 +16,9 @@ ReactDOM.render(
   //   <TodoHomePage />
   // </div>
   <Fragment>
-    <h1>salam</h1>
-    <TodoHomePage />
+    {/* <h1>salam</h1>
+    <TodoHomePage /> */}
+    <MouseTracker />
   </Fragment>
   // you can use <></> or <Fragment></Fragment>
   ,
