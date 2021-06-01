@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+import './InputField.component.css';
 class InputField extends Component {
 
     constructor(props) {
@@ -33,9 +33,9 @@ class InputField extends Component {
         console.log(this.state);
         const { title = "set a title please" } = this.props;
         return (
-            <div>
+            <div className={`wrapper`}>
                 <label>{title}</label>
-                <input className={`button`} type="text" value={this.state.value} onChange={this.changeHandler} />
+                <input  type="text" value={this.state.value} onChange={this.changeHandler} />
             </div>
         )
     }
