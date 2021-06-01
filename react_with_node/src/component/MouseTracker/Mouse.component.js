@@ -22,6 +22,7 @@ class Mouse extends React.Component {
           {/* ...but how do we render something other than a <p>? */}
               <p>The current mouse position is ({this.state.x}, {this.state.y})</p>
               <Cat mouser={this.state} />
+              
         </div>
       );
     }
