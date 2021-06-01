@@ -3,7 +3,6 @@ import ButtonStyle from './Button.module.css';
 
 class Button extends Component {
 
-
     handleClick = (event) => {
         console.log('salam')
         // if (this.props.type === 'sumbit') {
