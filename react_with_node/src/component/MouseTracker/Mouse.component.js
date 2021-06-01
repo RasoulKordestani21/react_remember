@@ -1,6 +1,6 @@
 // The <Mouse> component encapsulates the behavior we need...
 import React from 'react'
-import { Cat } from '../terminal';
+// import { Cat } from '../terminal';
 class Mouse extends React.Component {
     constructor(props) {
       super(props);
@@ -21,7 +21,8 @@ class Mouse extends React.Component {
   
           {/* ...but how do we render something other than a <p>? */}
               <p>The current mouse position is ({this.state.x}, {this.state.y})</p>
-              <Cat mouser={this.state} />
+              {/* <Cat mouser={this.state} /> */}
+              {this.props.render(this.state)}
         </div>
       );
     }
