@@ -1,11 +1,6 @@
 import React, { Component } from 'react'
 
-const buttonStyles = {
-    color: "gray",
-    backgroundColor: "aqua",
-    padding: '5px',
-    borderRadius: '20%'
-}
+
 class Button extends Component {
 
 
@@ -21,7 +16,12 @@ class Button extends Component {
         const { type = "button" } = this.props;//destructure 
         return (
             <div>
-                <button style={buttonStyles}  type={type} onClick={this.handleClick}>{this.props.children}</button>
+                <button style={{
+                    color: "gray",
+                    backgroundColor: "aqua",
+                    padding: '5px',
+                    borderRadius: '20%'
+                }} type={type} onClick={this.handleClick}>{this.props.children}</button>
             </div>
         )
     }
