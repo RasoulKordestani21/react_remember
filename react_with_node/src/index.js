@@ -1,4 +1,4 @@
-import React , {Fragment} from 'react';
+import React, { Fragment } from 'react';
 import ReactDOM from 'react-dom';
 import reportWebVitals from './reportWebVitals';
 import Home from './pages/Home';
@@ -6,7 +6,8 @@ import ListPage from './pages/ListPage';
 import CounterPage from './pages/CounterPage';
 import UserPage from './pages/UserPage'
 import TodoHomePage from './pages/TodoHome/TodoHome.page';
-import { MouseTracker } from './component/terminal'
+import { MouseTracker } from './component/terminal';
+import '../src/component/assets/Styles/global.scss'
 ReactDOM.render(
   // <div>
   //   {/* <Home />
@@ -15,11 +16,13 @@ ReactDOM.render(
   //   <UserPage /> */}
   //   <TodoHomePage />
   // </div>
-  <Fragment>
-    {/* <h1>salam</h1> */}
-    <TodoHomePage />
-    {/* <MouseTracker /> */}
-  </Fragment>
+  <div className={'new_class_hh'} >
+    <Fragment  >
+      {/* <h1>salam</h1> */}
+      <TodoHomePage />
+      {/* <MouseTracker /> */}
+    </Fragment>
+  </div>
   // you can use <></> or <Fragment></Fragment>
   ,
   document.getElementById('root')
