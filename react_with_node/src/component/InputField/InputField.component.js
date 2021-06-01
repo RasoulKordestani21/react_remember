@@ -35,7 +35,7 @@ class InputField extends Component {
         return (
             <div>
                 <label>{title}</label>
-                <input type="text" value={this.state.value} onChange={this.changeHandler} />
+                <input className={`button`} type="text" value={this.state.value} onChange={this.changeHandler} />
             </div>
         )
     }
