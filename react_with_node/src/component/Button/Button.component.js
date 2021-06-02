@@ -16,6 +16,7 @@ class Button extends Component {
         return (
             <div className={ButtonStyle.wrapper_in_temp}>
                 <button className={'button'} type={type} onClick={this.handleClick}>{this.props.children}</button>
+          
             </div>
         )
     }
