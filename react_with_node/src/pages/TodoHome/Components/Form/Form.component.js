@@ -7,14 +7,14 @@ class Form extends Component {
         description: ""
     }
     counter = 0;
-    intervalFunc = setInterval(() => { console.log(this.counter++) }, 1000)
+    // intervalFunc = setInterval(() => { console.log(this.counter++) }, 1000)
     componentDidMount() {
-        console.log("mounted")
+        // console.log("mounted")
     }
 
     componentWillUnmount() {
         console.log("component removed form page !!!");
-        clearInterval(this.intervalFunc);
+        // clearInterval(this.intervalFunc);
         this.setState({ title: 'salam' })
         // this.props.onUnmount();
     }
@@ -34,7 +34,7 @@ class Form extends Component {
         console.log(this.state)
     }
     render() {
-        console.log(this.state.title);
+        // console.log(this.state.title);
         return (
             <div>
                 <form onSubmit={e => { console.log('submited') }}>
