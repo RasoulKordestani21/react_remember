@@ -25,6 +25,9 @@ ReactDOM.render(
           <Route path="/home">
             <h1>Home</h1>
           </Route>
+          <Route path="/home/:id">
+            <h1>Home Detail Page</h1>
+          </Route>
           <Route path="/about">
             <h1>About</h1>
           </Route>
