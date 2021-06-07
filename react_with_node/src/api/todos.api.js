@@ -4,10 +4,10 @@ import { httpData } from '../utils/utils.http'
 console.log(httpData)
 const axiosReq = axios.get(`${httpData.baseURL}/todos`)
     .then((response) => {
-        console.log(response.data)
+        return response
     })
     .catch((err) => {
-        console.log(err);
+        return err
     })
 
 export { axiosReq }
