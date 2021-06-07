@@ -8,7 +8,31 @@ import UserPage from './pages/UserPage'
 import TodoHomePage from './pages/TodoHome/TodoHome.page';
 import { MouseTracker } from './component/terminal';
 import '../src/component/assets/Styles/global.scss'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
+const RouteApp = () => {
+  return(<>
+  <BrowserRouter>
+    <Switch>
+      <Route path="/home" exact>
+        <h1>Home</h1>
+      </Route>
+      <Route path="/home/:id">
+        <h1>Home Detail Page</h1>
+      </Route>
+      <Route path="/about">
+        <h1>About</h1>
+      </Route>
+      <Route path="/lists">
+        <h1>Lists</h1>
+      </Route>
+      <Route >
+        <h1>not found</h1>
+      </Route>
+    </Switch>
+    </BrowserRouter>
+    </>)
+
+}
 ReactDOM.render(
   // <div>
   //   {/* <Home />
@@ -18,33 +42,12 @@ ReactDOM.render(
   //   <TodoHomePage />
   // </div>
   <div className={'new_class_hh'} >
-
-    <>
-      <BrowserRouter>
-        <Switch>
-          <Route path="/home/:id">
-            <h1>Home Detail Page</h1>
-          </Route>
-          <Route path="/home">
-            <h1>Home</h1>
-          </Route>
-          <Route path="/about">
-            <h1>About</h1>
-          </Route>
-          <Route path="/lists">
-            <h1>Lists</h1>
-          </Route>
-          <Route >
-            <h1>not found</h1>
-          </Route>
-        </Switch>
-      </BrowserRouter>
+  <RouteApp />
+   
       {/* <h1>salam</h1> */}
       {/* <TodoHomePage /> */}
       {/* <MouseTracker /> */}
-    </>
-
-  </div>
+   </div>
   // you can use <></> or <Fragment></Fragment>
   ,
   document.getElementById('root')
