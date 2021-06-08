@@ -6,7 +6,7 @@ export class TodoHomePage extends Component {
     state = {
         flag: true,
         // data:{title:'',description:''},
-        initSubmitFlag:false,
+        initSubmitFlag: false,
         users: []
     }
     componentDidMount() {
@@ -18,17 +18,17 @@ export class TodoHomePage extends Component {
         // const users = [...this.state.users, { title, description }]
         let users;
         if (!this.state.initSubmitFlag) {
-             users = [];
-            this.setState({initSubmitFlag:true})
+            users = [];
+            this.setState({ initSubmitFlag: true })
         } else {
-            users = localStorage.getItem('users');
+            users = JSON.parse(localStorage.getItem('users'));
         }
 
-     
+
         console.log(users);
         users.push({ id: users.length, title, description });
         localStorage.setItem("users", JSON.stringify(users));
-        
+
     }
     shouldComponentUpdate(nextProp, nextState) {
         console.log("should Update :", this.state.flag, nextState.flag);
