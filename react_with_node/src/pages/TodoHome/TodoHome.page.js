@@ -2,11 +2,11 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import Form from './Components/Form/Form.component';
 export class TodoHomePage extends Component {
-    
+
     state = {
         flag: true,
         // data:{title:'',description:''},
-
+        initSubmitFlag:false,
         users: []
     }
     componentDidMount() {
@@ -16,12 +16,19 @@ export class TodoHomePage extends Component {
     submitHandler = (title, description) => {
         // console.log(this.state)
         // const users = [...this.state.users, { title, description }]
-        const users = this.state.users;
-        users.push({ id: users.length, title, description });
-        this.setState({ users });
-        localStorage.setItem("users", JSON.stringify(users));
+        let users;
+        if (!this.state.initSubmitFlag) {
+             users = [];
+            this.setState({initSubmitFlag:true})
+        } else {
+            users = localStorage.getItem('users');
+        }
 
-        console.log(this.state.users);
+     
+        console.log(users);
+        users.push({ id: users.length, title, description });
+        localStorage.setItem("users", JSON.stringify(users));
+        
     }
     shouldComponentUpdate(nextProp, nextState) {
         console.log("should Update :", this.state.flag, nextState.flag);
@@ -44,7 +51,7 @@ export class TodoHomePage extends Component {
 
                     {this.state.users.map(item => <li>{item.title} | {item.description}  </li>)}
 
-                </ul> */} 
+                </ul> */}
                 {/* <TodoListPage /> */}
                 <div>
                     <button type="button" onClick={() => this.setState({ flag: true })}>form adder</button>
