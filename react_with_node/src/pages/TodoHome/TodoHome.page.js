@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
 import Form from './Components/Form/Form.component'
 export class TodoHomePage extends Component {
     state = {
@@ -33,12 +34,15 @@ export class TodoHomePage extends Component {
                 {this.state.flag && <Form onClick={this.submitHandler} />}
                 {/* <button onClick={() => { this.setState({ flag: true }) }}>form adder</button> */}
                 <ul>
-                   
+
                     {this.state.users.map(item => <li>{item.title} | {item.description}  </li>)}
-                  
+
                 </ul>
+                <div>
                 <button type="button" onClick={() => this.setState({ flag: true })}>form adder</button>
                 <button type="button" onClick={() => this.setState({ flag: false })}>form remover</button>
+                </div>
+                <Link to='/lists' style={{ color: "white" }}>go to list page </Link>
             </div>
         )
     }

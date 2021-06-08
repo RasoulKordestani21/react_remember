@@ -1,13 +1,15 @@
 import React, { Component } from 'react'
-import { BrowserRouter, Switch, Route } from 'react-router-dom';
+import { BrowserRouter, Switch, Route, Redirect } from 'react-router-dom';
+import TodoHomePage from '../pages/TodoHome/TodoHome.page';
 export class RouteApp extends Component {
     render() {
         return (
             <div>
                 <BrowserRouter>
                     <Switch>
+                        <Redirect push m   from="/" to="/home" exact />
                         <Route path="/home" exact>
-                            <h1>Home</h1>
+                            <TodoHomePage />
                         </Route>
                         <Route path="/home/:id">
                             <h1>Home Detail Page</h1>
