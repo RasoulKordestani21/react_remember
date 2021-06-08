@@ -17,25 +17,21 @@ class InputField extends Component {
     }
 
     componentDidMount() {
-        console.log("mounted");
         this.setState({ value: this.props.value })
-        console.log(this.state.value)
     }
     shouldComponentUpdate(nextProp, nextState) {
         if (this.props.value !== nextProp.value) this.setState({ value: nextProp.value });
         return true;
     }
     render() {
-        console.log("didmou")
 
         /*destructure also applied to here*/
         // const { value } = this.props.value;
-        console.log(this.state);
         const { title = "set a title please" } = this.props;
         return (
             <div className={InputFieldStyle.wrapper} >
                 <label>{title}</label>
-                <input  type="text" value={this.state.value} onChange={this.changeHandler} />
+                <input type="text" value={this.state.value} onChange={this.changeHandler} />
             </div>
         )
     }

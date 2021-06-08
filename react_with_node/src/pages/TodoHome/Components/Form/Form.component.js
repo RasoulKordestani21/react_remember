@@ -4,7 +4,8 @@ import { InputField, Button } from '../../../../component/terminal'
 class Form extends Component {
     state = {
         title: "",
-        description: ""
+        description: "",
+        list: []
     }
     counter = 0;
     // intervalFunc = setInterval(() => { console.log(this.counter++) }, 1000)
@@ -30,8 +31,8 @@ class Form extends Component {
     }
     handlClick = (param) => {
         this.props.onClick(this.state.title, this.state.description);
+        console.log(this.state.list);
         this.setState({ title: '', description: '' });
-        console.log(this.state)
     }
     render() {
         console.log(this.state.title);
